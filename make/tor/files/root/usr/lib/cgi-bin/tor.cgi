@@ -22,12 +22,9 @@ sec_begin '$(lang de:"Einstellungen" en:"Configuration")'
 
 cat << EOF
 <h2>$(lang de:"Der Tor Server ist gebunden an" en:"The Tor server is listening on")</h2>
-<p>$(lang de:"IP Adresse" en:"IP Address"):&nbsp;<input id="address" type="text" size="16" maxlength="16" name="socks_address" value="$(html "$TOR_SOCKS_ADDRESS")">
-$(lang de:"Port" en:"Port"):&nbsp;<input id="port" type="text" size="5" maxlength="5" name="socks_port" value="$(html "$TOR_SOCKS_PORT")"></p>
+<p>$(lang de:"Port" en:"Port"):&nbsp;<input id="port" type="text" size="5" maxlength="5" name="socks_port" value="$(html "$TOR_SOCKS_PORT")"></p>
 <h2>$(lang de:"Fernsteuerung" en:"Remote Control") (optional)</h2>
 <p>Control Port:&nbsp;<input id="control" type="text" size="5" maxlength="5" name="control_port" value="$(html "$TOR_CONTROL_PORT")"></p>
-<p>Control Interface&nbsp;($(lang de:"z.B." en:"e.g.") 192.168.178.1):&nbsp;<input id="controlif" type="text" size="21" maxlength="21" name="control_address" value="$(html "$TOR_CONTROL_ADDRESS")"><br />
-<span style="font-size:10px;">127.0.0.1 $(lang de:", falls nicht angegeben" en:", if not specified")</span></p>
 <p>Control Password Hash:&nbsp;<input id="controlpw" type="text" size="61" maxlength="61" name="control_hashed_pass" value="$(html "$TOR_CONTROL_HASHED_PASS")"><br />
 <span style="font-size:10px;">$(lang de:"Falls ein Control Interface angegeben wurde, muss hier ebenfalls ein Passwort-Hash angegeben werden." en:"If Control Interface is not empty you must provide a password.")<br />
 ($(lang de:"Ein Passwort Hash kann durch den Befehl <i>tor --hash-password mein_passwort</i> erzeugt werden." en:"You can create a password hash with <i>tor --hash-password my_password</i>."))</span></p>
