@@ -36,6 +36,7 @@ if [ "$TOR_RELAY_ENABLED" == "yes" ]; then
 	[ "$TOR_BANDWIDTHBURST" ] && echo "BandwidthBurst $TOR_BANDWIDTHBURST"
 	[ "$TOR_ORPORT" ] && echo "ORPort $TOR_ORPORT"
 	[ "$TOR_DIRPORT" ] && echo "DirPort $TOR_DIRPORT"
+	[ "$TOR_DIRCACHE" == "no" ] && echo "DirCache 0"
 	[ "$TOR_EXITPOLICY" ] && echo "ExitPolicy $TOR_EXITPOLICY"
 	[ "$TOR_BRIDGERELAY" == "yes" ] && echo "BridgeRelay 1"
 fi

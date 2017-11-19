@@ -9,6 +9,7 @@ check "$TOR_FORCE_GEOIP_UPDATE" yes:force_geoip_update
 check "$TOR_RELAY_ENABLED" yes:relay_enabled
 check "$TOR_DATADIRPERSISTENT" yes:datadirpersistent_enabled
 check "$TOR_BRIDGERELAY" yes:bridgerelay
+check "$TOR_DIRCACHE" yes:dircache
 
 sec_begin '$(lang de:"Starttyp" en:"Start type")'
 
@@ -80,6 +81,7 @@ cat << EOF
 <p>BandwidthRate ($(lang de:"z.B." en:"e.g.") "20 KB"):&nbsp;<input id="bandwith" type="text" size="5" maxlength="7" name="bandwidthrate" value="$(html "$TOR_BANDWIDTHRATE")"></p>
 <p>BandwidthBurst ($(lang de:"z.B." en:"e.g.") "40 KB"):&nbsp;<input id="bandwithburst" type="text" size="5" maxlength="7" name="bandwidthburst" value="$(html "$TOR_BANDWIDTHBURST")"></p>
 <p>ORPort:&nbsp;<input id="or" type="text" size="5" maxlength="5" name="orport" value="$(html "$TOR_ORPORT")"> &nbsp; DirPort:&nbsp;<input id="dir" type="text" size="5" maxlength="5" name="dirport" value="$(html "$TOR_DIRPORT")"></p>
+<p>DirCache ($(lang de:"verursacht hohe RAM-Nutzung" en:"causes high memory usage")): <input type="hidden" name="dircache" value="no"><input id="e11" type="checkbox" name="dircache" value="yes"$dircache_chk></p>
 <p>ExitPolicy ($(lang de:"z.B." en:"e.g.") "reject *.*" = no exits allowed):&nbsp;<input id="policy" type="text" size="20" maxlength="20" name="exitpolicy" value="$(html "$TOR_EXITPOLICY")"></p>
 <p>$(lang de:"Diesen Server als Bridge verwenden" en:"Use this server as a bridge"): <input type="hidden" name="bridgerelay" value="no"><input id="e10" type="checkbox" name="bridgerelay" value="yes"$bridgerelay_chk></p>
 <p>DataDirectory (Default /var/tmp/tor): &nbsp;<input id="datadir" type="text" size="40" maxlength="40" name="datadirectory"
